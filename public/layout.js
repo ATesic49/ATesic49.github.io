@@ -34,7 +34,7 @@ if(localData == 'whitemode'){
 
 
 podesavanja.addEventListener('click',()=>{
-    console.log('clicked')
+
     select.style.animation='meni 2s  ease forwards'
     select.style.display='flex'
     nijebody.style.display='block'
