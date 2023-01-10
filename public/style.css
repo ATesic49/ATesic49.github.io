@@ -1,0 +1,83 @@
+body{
+    
+--font-size-small:10px;
+--font-size-mid:15px;
+--font-size-large:25px;
+--font-size-x-large:35px;
+
+--background-color:rgb(49, 49, 49);
+--font-color:#bababa;
+--submit-color:#5e5e5e;
+--submit-color:#039f03f5;
+/* --submit-color:#7a7a7af5; */
+/* --border-color: rgba(0, 0, 0, 0.413); */
+--border-color: rgba(218, 218, 218, 0.413);
+--pogresna-lozinka:rgb(181, 32, 32);
+
+
+font-family: 'Righteous';
+color:var(--font-color);
+}
+
+
+
+.podesavanja{
+    position: absolute;
+    top: 5%;
+    left: 10%;
+}
+.podesavanja img{
+    position: absolute;
+    top:0;
+    left:0;
+    transform:
+     scale(.1)
+     translate(-2350px,-2350px)
+     ;
+
+filter: invert(61%) sepia(84%) saturate(0%) hue-rotate(181deg) brightness(83%) contrast(97%);
+}
+
+.select{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    transform:  translateY(-0%) translateX(-30%);
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: var(--font-color);
+    width: 0%;
+    display: none;
+    height: 100vh;
+    color: var(--background-color);
+    animation: meni 2s  ease forwards  ;
+}
+
+.select ul{
+    transform: translate(-50%);
+}
+
+.select li{
+    margin: 80%;
+    width: 100%;
+    list-style: none;
+}
+.nijebody{
+    display: none;
+    height: 100vh;
+    position: absolute;
+    top:0;
+    right:0;
+    width: 100%;
+}
+
+@keyframes meni {
+    0%{
+        width: 0;
+    }
+    100%{
+        width: 100%;
+    }
+}
