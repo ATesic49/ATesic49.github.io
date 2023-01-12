@@ -1,4 +1,52 @@
-Hi <%= imePrezime %> 
-<form action="/logout?_method=DELETE" method="post">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/homePage.css">
+    <script src="/homePage.js" defer></script>
+</head>
+<body>
+    <div class="user"><%= imePrezime %> </div> 
+    <form action="/logout?_method=DELETE" method="post" class="logout">
     <button type="submit">Log Out</button>
 </form>
+<div class="container">
+    <div class="prvi">
+        <h1>VBGlovo</h1>
+    </div>
+</div>
+<div class="container">
+    <div class="drugi">
+        <form action="">
+            <input type="text" placeholder="Trazi...">
+        </form>
+        <div class="lupa"><img src="/imagesForSite/magnifyingGlass.png" alt=""></div>
+    </div>
+
+</div>
+<div class="container">
+    <div class="treci">
+       <div class="prodavnica">
+        <img src="/imagesForSite/TebraPitice.jpeg" alt="">
+        <h2>Tebra Pitice</h2>
+       </div>
+       <div class="prodavnica">
+        <img src="/imagesForSite/hleb-kifle-1.jpg" alt="">
+        <h2>Hleb i Kifle</h2>
+       </div>
+       <div class="prodavnica">
+        <img src="/imagesForSite/hotGood.jpeg" alt="">
+        <h2>Hot Good</h2>
+       </div>
+       <div class="prodavnica">
+        <img src="/imagesForSite/Kafeterija-logo.jpg" alt="">
+        <h2>Kefeterija</h2>
+       </div>
+    </div>
+</div>
+
+</body>
+</html>

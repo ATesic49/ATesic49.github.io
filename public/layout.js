@@ -11,6 +11,7 @@ let localData = localStorage.getItem('mode')
 
 if(localData == 'whitemode'){
     body.style.setProperty('--background-color','white')
+    body.style.setProperty('--skoro-background-color','rgb(222, 222, 222)')
     body.style.setProperty('--font-color','black')
     body.style.setProperty('--submit-color','#02be02')
     body.style.setProperty('--border-color','rgba(0, 0, 0, 0.413)')
@@ -18,12 +19,14 @@ if(localData == 'whitemode'){
     podesavanja.style.filter='brightness(0)'
 }else if(localData == 'darkpremium'){
     body.style.setProperty('--background-color','#7a7a7af5')
+    body.style.setProperty('--skoro-background-color','#aea327')
     body.style.setProperty('--font-color','#aea327')
     body.style.setProperty('--submit-color','#5e5e5e')
     body.style.setProperty('--border-color','rgba(218, 218, 218, 0.413)')
     body.style.setProperty('--pogresna-lozinka','rgb(117, 33, 33)')
     podesavanja.style.filter='invert(39%) sepia(5%) saturate(0%) hue-rotate(151deg) brightness(69%) contrast(90%)'
 }else{
+    body.style.setProperty('--skoro-background-color','rgb(70, 70, 70)')
     body.style.setProperty('--background-color','rgb(49, 49, 49)')
     body.style.setProperty('--font-color','#bababa')
     body.style.setProperty('--submit-color','#039f03f5')
@@ -54,6 +57,7 @@ const darkpremium = document.querySelector('.PremiumDark')
 whitemode.addEventListener('click',()=>{
     localStorage.setItem('mode','whitemode')
     body.style.setProperty('--background-color','white')
+    body.style.setProperty('--skoro-background-color','rgb(222, 222, 222)')
     body.style.setProperty('--font-color','black')
     body.style.setProperty('--submit-color','#02be02')
     body.style.setProperty('--border-color','rgba(0, 0, 0, 0.413)')
@@ -64,6 +68,7 @@ whitemode.addEventListener('click',()=>{
 
 darkmode.addEventListener('click',()=>{
     localStorage.setItem('mode','darkmode')
+    body.style.setProperty('--skoro-background-color','rgb(70, 70, 70)')
     body.style.setProperty('--background-color','rgb(49, 49, 49)')
     body.style.setProperty('--font-color','#bababa')
     body.style.setProperty('--submit-color','#039f03f5')
@@ -74,6 +79,7 @@ darkmode.addEventListener('click',()=>{
 darkpremium.addEventListener('click',()=>{
     localStorage.setItem('mode','darkpremium')
     body.style.setProperty('--background-color','#7a7a7af5')
+    body.style.setProperty('--skoro-background-color','#aea327')
     body.style.setProperty('--font-color','#aea327')
     body.style.setProperty('--submit-color','#5e5e5e')
     body.style.setProperty('--border-color','rgba(218, 218, 218, 0.413)')

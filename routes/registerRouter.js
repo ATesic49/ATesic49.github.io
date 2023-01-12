@@ -18,10 +18,13 @@ try{
         password:hashedPassword
     })
     if(await UserSchema.find({brojTelefona:user.brojTelefona,password:user.password})){
-         res.render('registerPage',{error:"Brate, ti vec imas nalog"})
-    }else{
     const newUser = await user.save()
     console.log(newUser)
+    console.log(await UserSchema.find({}))
+    res.redirect('/login')
+    }else{
+    res.render('registerPage',{error:"Brate, ti vec imas nalog"})
+
 }
 }catch (e){
     console.log(e.message)

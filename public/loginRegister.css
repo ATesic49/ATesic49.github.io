@@ -79,6 +79,7 @@ align-items: center;
 
 .container .drugi form input{
     color: var(--font-color);
+    overflow: hidden;
     outline: none;
     border: 1px solid var(--border-color);
     padding:8px 10px;
@@ -114,6 +115,7 @@ align-items: center;
     
 }
 .container .drugi .nemas-nalog a{
+    box-shadow:  0 1px 2px black;
     color: var(--font-color);
     text-decoration: none;
     letter-spacing: 1.2px;
@@ -125,6 +127,11 @@ align-items: center;
     right: 10%;
 }
 
+.container .drugi .nemas-nalog a:hover{
+    transform: scale(1.05);
+    transition: transform .2s;
+}
+
 
 
 
@@ -132,4 +139,4 @@ align-items: center;
 
 
 
-
+/* KEYFRAMES */

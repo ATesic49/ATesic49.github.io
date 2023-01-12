@@ -1,0 +1,149 @@
+/* LOGOUT */
+
+
+.logout{
+    position: absolute;
+    top: 10%;
+    right: 5%;
+}
+.logout button{
+    background-color:  var(--submit-color);
+    color: var(--font-color);
+    outline: none;
+    border: 1px solid var(--border-color);
+    padding: 8px 10px;
+    border-radius: 25px;
+    font-family: 'Righteous';
+
+
+}
+.user{
+    position: absolute;
+    top: 5%;
+    right: 5%; 
+    text-shadow: 1px -1px 2px var(--submit-color);
+}
+
+/* LOGOUT */
+
+.container{
+    width:100%;
+    display: flex;
+    flex-direction: column;
+    justify-content:center ;
+    align-items:center ;
+}
+.container .prvi{
+    margin-top: 20vh;
+    margin-bottom: 2vh;
+}
+.container .prvi h1{
+font-size: var(--font-size-x-large);
+}
+
+.container .drugi{
+    width: 80%;
+    position: relative;
+    margin-bottom: 5vh;
+
+}
+
+.container .drugi form{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.container .drugi input{
+    width: 100%;
+    outline: none;
+    color: var(--font-color);
+    border: 1px solid var(--border-color);
+    padding:12px 18px;
+    background-color: transparent;
+    border-radius: 25px;
+}
+.container .drugi::after{
+    position: absolute;
+    content: '';
+    display: block;
+    top: 0;
+    right: 0;
+    width: 20%;
+    height: 100%;
+    background-color: var(--submit-color);
+    border-radius: 0px 25px 25px 0;
+}
+.container .drugi .lupa{
+    position: absolute;
+    content: '';
+    display: block;
+    top: 0%;
+    right: 0%;
+    width: 20%;
+    height: 100%;
+    background-repeat: no-repeat;
+    border-radius: 0px 25px 25px 0;
+    z-index: 2 !important;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.container .drugi .lupa img{
+    height: 50%;
+    margin:  0 auto;
+}
+
+
+/* DRUGI*/
+
+
+
+
+/* TRECI */
+.container .treci{
+    width: 90%;
+    margin: 0;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.container .treci .prodavnica{
+    margin: 3vh 0;
+    width: 48%;
+    min-width:150px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    text-align: left;
+    border-radius: 25px;
+    box-shadow: 0 0 10px var(--skoro-background-color);
+}
+.container .treci .prodavnica h2{
+margin: 15% 10%;
+}
+
+.container .treci .prodavnica p{
+    color: var(--border-color);
+    margin: 5% 10% 10% 10%;
+}
+.container .treci .prodavnica img{
+    display: flex;
+    border-radius:20px 20px 0 0 ;
+    aspect-ratio:1.61/1;
+    box-shadow: 0 0 2px var(--skoro-background-color);
+
+    
+}
+
+.container .treci .prodavnica:hover{
+    transform: scale(1.05);
+    transition: transform .2s;
+}
+
+
+/* TRECI */
+
