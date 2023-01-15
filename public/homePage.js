@@ -1,4 +1,7 @@
 const prodavnice = document.querySelectorAll('.prodavnica')
+const user=document.querySelector('.user')
+const updateUser=document.querySelector('.update-user')
+
 
 const pretraga = document.querySelector('.drugi input')
 pretraga.addEventListener('input',()=>{
@@ -20,4 +23,20 @@ if(i === prodavnice.length){
 
     })
 }
+})
+
+
+
+user.addEventListener('click',()=>{
+
+    updateUser.style.animation='meni 2s  ease forwards'
+    updateUser.style.display='flex'
+    nijebody.style.display='block'
+    })
+
+nijebody.addEventListener('click',()=>{
+    nijebody.style.display='none'
+    updateUser.style.animation='meni reverse 2s forwards '
+    updateUser.style.display='none'
+
 })

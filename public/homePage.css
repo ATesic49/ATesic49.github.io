@@ -3,7 +3,7 @@
 
 .logout{
     position: absolute;
-    top: 10%;
+    top: 5%;
     right: 5%;
 }
 .logout button{
@@ -19,11 +19,23 @@
 }
 .user{
     position: absolute;
-    top: 5%;
-    right: 5%; 
-    text-shadow: 1px -1px 2px var(--submit-color);
-}
+    top: 12%;
+    right: 5%;
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+    font-weight: 400;
 
+}
+.user:hover{
+    transform: scale(1.05);
+    transition: .2s;
+}
+.user img{
+    display: inline;
+    width: 15%;
+    filter: var(--filteri);
+}
 /* LOGOUT */
 
 .container{
@@ -34,8 +46,8 @@
     align-items:center ;
 }
 .container .prvi{
-    margin-top: 20vh;
-    margin-bottom: 2vh;
+    margin-top: 18vh;
+    margin-bottom: 3vh;
 }
 .container .prvi h1{
 font-size: var(--font-size-x-large);
@@ -62,6 +74,10 @@ font-size: var(--font-size-x-large);
     padding:12px 18px;
     background-color: transparent;
     border-radius: 25px;
+}
+.container .drugi input::placeholder{
+    color: var(--font-color);
+
 }
 .container .drugi::after{
     position: absolute;
@@ -112,6 +128,7 @@ font-size: var(--font-size-x-large);
 }
 
 .container .treci .prodavnica{
+    position: relative;
     margin: 3vh 0;
     width: 48%;
     min-width:150px;
@@ -120,8 +137,18 @@ font-size: var(--font-size-x-large);
     justify-content: space-around;
     text-align: left;
     border-radius: 25px;
-    box-shadow: 0 0 10px var(--skoro-background-color);
+    box-shadow: 0 0 25px var(--skoro-background-color);
 }
+
+.container .prodavnica a{
+    display: block !important;
+    position: absolute;
+    width:100%;
+    height: 100%;
+    top: 0;
+    right: 0;
+}
+
 .container .treci .prodavnica h2{
 margin: 15% 10%;
 }
@@ -131,10 +158,11 @@ margin: 15% 10%;
     margin: 5% 10% 10% 10%;
 }
 .container .treci .prodavnica img{
-    display: flex;
+    display: block;
     border-radius:20px 20px 0 0 ;
     aspect-ratio:1.61/1;
-    box-shadow: 0 0 2px var(--skoro-background-color);
+    background-color: transparent;
+    box-shadow: 0 0 1px var(--skoro-background-color);
 
     
 }

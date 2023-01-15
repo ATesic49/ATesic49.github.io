@@ -9,7 +9,17 @@
     <script src="/homePage.js" defer></script>
 </head>
 <body>
-    <div class="user"><%= imePrezime %> </div> 
+    <div class="update-user">
+           
+        <form action="/" method="post">
+                <label>Username:</label> <input type="text"value='<%= user.imePrezime %> '>
+                <label>BrojTelefona:</label> <input type="text"value='<%= user.brojTelefona %> '>
+                <label>Password:</label> <input type="text"value='<%= user.password %> '>
+        </form>
+</div>
+    <div class="user"><img src="/imagesForSite/user.png" alt=""> <%= user.imePrezime %>
+
+    </div> 
     <form action="/logout?_method=DELETE" method="post" class="logout">
     <button type="submit">Log Out</button>
 </form>
@@ -29,22 +39,14 @@
 </div>
 <div class="container">
     <div class="treci">
+        <% prodavnica.forEach(prodavnica=>{%>
        <div class="prodavnica">
-        <img src="/imagesForSite/TebraPitice.jpeg" alt="">
-        <h2>Tebra Pitice</h2>
+        <a href="<%=prodavnica.id%>"></a>
+        <img src="<%= prodavnica.slika %>" alt="">
+        <h2><%= prodavnica.imeProdavnice %></h2>
        </div>
-       <div class="prodavnica">
-        <img src="/imagesForSite/hleb-kifle-1.jpg" alt="">
-        <h2>Hleb i Kifle</h2>
-       </div>
-       <div class="prodavnica">
-        <img src="/imagesForSite/hotGood.jpeg" alt="">
-        <h2>Hot Good</h2>
-       </div>
-       <div class="prodavnica">
-        <img src="/imagesForSite/Kafeterija-logo.jpg" alt="">
-        <h2>Kefeterija</h2>
-       </div>
+      <% })  %> 
+
     </div>
 </div>
 

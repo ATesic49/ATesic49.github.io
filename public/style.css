@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@100;300;400;500;700;800&family=Righteous&display=swap');
+
+
 *{
     margin: 0;
     padding: 0;
@@ -23,8 +26,10 @@ body{
 --border-color: rgba(218, 218, 218, 0.413);
 --pogresna-lozinka:rgb(181, 32, 32);
 
+--filteri:brightness:0%;
+
 background-color: var(--background-color);
-font-family: 'Righteous';
+font-family: 'M PLUS Rounded 1c';
 color:var(--font-color);
 }
 
@@ -33,28 +38,26 @@ color:var(--font-color);
 .podesavanja{
     position: absolute;
     top: 5%;
-    left: 10%;
+    left:8.05%;
+    width: 50%;
 }
 .podesavanja img{
     position: absolute;
     top:0;
-    left:0;
-    transform:
-     scale(.1)
-     translate(-2350px,-2350px)
-     ;
-
-filter: invert(61%) sepia(84%) saturate(0%) hue-rotate(181deg) brightness(83%) contrast(97%);
+    left:0; 
+width: 25%;
+filter:var(--filteri);
 }
 
 .select{
-    display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
     transform:  translateY(-0%) translateX(-30%);
     position: fixed;
     top: 0;
+    z-index: 2;
+
     left: 0;
     background-color: var(--font-color);
     width: 0%;
@@ -62,6 +65,7 @@ filter: invert(61%) sepia(84%) saturate(0%) hue-rotate(181deg) brightness(83%) c
     height: 100vh;
     color: var(--background-color);
     animation: meni 2s  ease forwards  ;
+    font-family: 'Righteous';
 }
 
 .select ul{
@@ -83,20 +87,94 @@ filter: invert(61%) sepia(84%) saturate(0%) hue-rotate(181deg) brightness(83%) c
 }
 
 button{
-    
+
 box-shadow:  0 1px 2px black;
 }
-
+p{
+    text-shadow: 0 1px 2px black;
+    
+}
 button:hover{
     transform: scale(1.05);
     transition: .2s;
 }
 
+
+input:focus{
+    animation: input .5s  forwards;
+}
+
+
+
+
+
+/* UPDATE USER */
+.update-user{
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    transform:  translateY(-0%) translateX(-30%);
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: var(--font-color);
+    width: 0%;
+    display: none;
+    z-index: 2;
+    height: 100vh;
+    color: var(--background-color);
+    animation: meni 2s  ease forwards  ;
+    font-family: 'Righteous';
+}
+.update-user form{
+    height: 50%;
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-end;
+    flex-direction: column;
+}
+
+.update-user form{
+    display: flex;
+    width: 50%;
+    flex-direction: column;
+    justify-content: center;
+    font-size: var(--font-size-large);
+}
+.update-user form  input{
+    transform: translatex(25%);
+    color: var(--background-color);
+    overflow: hidden;
+    outline: none;
+    border: 1px solid var(--border-color);
+    padding:8px 10px;
+    border-radius: 25px;
+    width: 100%;
+    margin-top: 2px;
+    background-color: transparent;
+}
+.update-user form label{
+    transform: translatex(20%);
+
+}
 @keyframes meni {
     0%{
         width: 0;
     }
     100%{
         width: 100%;
+    }
+}
+
+
+@keyframes input{
+    0%{
+        box-shadow: none;
+    }
+    50%{
+        box-shadow: 0 0 10px var(--submit-color);
+    }
+    100%{
+        box-shadow: none;
     }
 }

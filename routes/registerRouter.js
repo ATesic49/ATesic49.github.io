@@ -15,15 +15,18 @@ try{
     const user =  new UserSchema({
         imePrezime:req.body.imeiprezime,
         brojTelefona:brojTelefona,
-        password:hashedPassword
+        password:hashedPassword 
+
     })
-    if(await UserSchema.find({brojTelefona:user.brojTelefona,password:user.password})){
-    const newUser = await user.save()
-    console.log(newUser)
-    console.log(await UserSchema.find({}))
-    res.redirect('/login')
+    console.log(await UserSchema.find({brojTelefona:user.brojTelefona}))
+    if(await (await UserSchema.find({brojTelefona:user.brojTelefona})).length == 0){
+        const newUser = await user.save()
+        console.log(newUser)
+        res.redirect('/login')
     }else{
+
     res.render('registerPage',{error:"Brate, ti vec imas nalog"})
+
 
 }
 }catch (e){
