@@ -1,0 +1,157 @@
+/* LOGOUT */
+
+
+.logout{
+    position: absolute;
+    top: 5%;
+    right: 5%;
+}
+.logout button{
+    background-color:  var(--submit-color);
+    color: var(--font-color);
+    outline: none;
+    border: 1px solid var(--border-color);
+    padding: 8px 10px;
+    border-radius: 25px;
+    font-family: 'Righteous';
+
+
+}
+.user{
+    position: absolute;
+    top: 12%;
+    right: 5%;
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+    font-weight: 400;
+
+}
+.user:hover{
+    transform: scale(1.05);
+    transition: .2s;
+}
+.user img{
+    display: inline;
+    width: 15%;
+    filter: var(--filteri);
+}
+/* LOGOUT */
+
+.container{
+    width:100%;
+    display: flex;
+    flex-direction: column;
+    justify-content:center ;
+    align-items:center ;
+}
+.container .prvi{
+    margin-top: 18vh;
+    margin-bottom: 3vh;
+}
+.container .prvi h1{
+font-size: var(--font-size-x-large);
+}
+
+.container .drugi{
+    width: 80%;
+    position: relative;
+    margin-bottom: 5vh;
+
+}
+
+.container .drugi form{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.container .drugi input{
+    width: 100%;
+    outline: none;
+    color: var(--font-color);
+    border: 1px solid var(--border-color);
+    padding:12px 18px;
+    background-color: transparent;
+    border-radius: 25px;
+}
+.container .drugi input::placeholder{
+    color: var(--font-color);
+
+}
+.container .drugi::after{
+    position: absolute;
+    content: '';
+    display: block;
+    top: 0;
+    right: 0;
+    width: 20%;
+    height: 100%;
+    background-color: var(--submit-color);
+    border-radius: 0px 25px 25px 0;
+}
+.container .drugi .lupa{
+    position: absolute;
+    content: '';
+    display: block;
+    top: 0%;
+    right: 0%;
+    width: 20%;
+    height: 100%;
+    background-repeat: no-repeat;
+    border-radius: 0px 25px 25px 0;
+    z-index: 2 !important;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.container .drugi .lupa img{
+    height: 50%;
+    margin:  0 auto;
+}
+
+/* DRUGI*/
+/* TRECI */
+/* .naziv{
+    width: 100%;
+    text-align:center;
+} */
+.container .treci{
+    min-height: 8vh;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    padding: 5px 8px;
+    align-items: center;
+    justify-content:space-around;
+    border-top: .5px var(--border-color) solid;
+    border-bottom: .5px var(--border-color) solid;
+
+}
+
+
+.container .treci div {
+    width: 30%;
+    text-align: center;
+}
+
+.container .treci .jelo{
+    text-align: left;
+}
+.container .treci .cena{
+    text-align: right;
+    width: 20%;
+
+}
+
+.container .treci  input{
+    width:10%;
+    border:1px solid var(--border-color);
+    outline: none;
+
+}
+.container .treci .specijal{
+    outline: none;
+
+}
+/* TRECI */

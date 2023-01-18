@@ -2,6 +2,14 @@ const podesavanja = document.querySelector('.podesavanja img')
 const select = document.querySelector('.select')
 const nijebody =document.querySelector('.nijebody')
 const body= document.querySelector('body')
+const user=document.querySelector('.user')
+
+if (localStorage.getItem('user')==null){
+    localStorage.setItem('user',user.innerText)
+}
+localStorage.getItem('user')
+
+
 
 if (localStorage.getItem('mode')==null){
     localStorage.setItem('mode','darkmode')

@@ -1,12 +1,74 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="/meniPage.css">
+    <script src="/meniPage.js" defer></script>
 </head>
+
 <body>
-    
+
+    <div class="user"><img src="/imagesForSite/user.png" alt="">
+        <%= user.imePrezime %>
+
+    </div>
+    <form action="/logout?_method=DELETE" method="post" class="logout">
+        <button type="submit">Log Out</button>
+    </form>
+    <div class="container">
+        <div class="prvi">
+            <h1> <%=prodavnica.imeProdavnice %> </h1>
+        </div>
+    </div>
+    <div class="container">
+        <div class="drugi">
+            <form action="">
+                <input type="text" placeholder="Trazi...">
+            </form>
+            <div class="lupa"><img src="/imagesForSite/magnifyingGlass.png" alt=""></div>
+        </div>
+
+    </div>
+    <div class="container">
+        <% prodavnica.meni.forEach(segment=> { %>
+            <h2>
+                <%= segment.segment %>
+            </h2>
+            <% segment.jela.forEach(jelo=>{%>
+                <div class="treci">
+                    <div class="jelo">
+                        <div class="naziv">
+                            <%= jelo.jelo %>
+                        </div>
+                    </div>
+                  <% if(jelo.specijal){ %>
+                    <select name="specijal" id="specijal">
+                        <% jelo.specijal.forEach(jelo => { %>
+                        <option value="<%=jelo.vrednost %>"><%= jelo.ime  %> </option>
+                       <% }); %> 
+                    </select>
+                <%  } %> 
+
+                    <div class="kolicina">
+                        Kolicina:
+                        1
+                    </div>
+
+
+                    <div class="cena">
+                        <%= jelo.cena %>
+                    </div>
+
+
+                </div>
+                <%})%>
+                    <% }); %>
+
+    </div>
 </body>
+
 </html>

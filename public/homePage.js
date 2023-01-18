@@ -1,12 +1,11 @@
 const prodavnice = document.querySelectorAll('.prodavnica')
-const user=document.querySelector('.user')
 const updateUser=document.querySelector('.update-user')
 
 
 const pretraga = document.querySelector('.drugi input')
 pretraga.addEventListener('input',()=>{
+
 let i = 0
-console.log(pretraga.value)
 const search = pretraga.value
 prodavnice.forEach((prodavnica)=>{
 if(prodavnica.querySelector('h2').innerText.toLowerCase().includes(search.toLowerCase())){
@@ -40,3 +39,6 @@ nijebody.addEventListener('click',()=>{
     updateUser.style.display='none'
 
 })
+
+
+
