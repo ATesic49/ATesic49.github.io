@@ -3,6 +3,11 @@ const router = express.Router({mergeParams:true})
 const Prodavnice=require('../models/Prodavnice')
 
 router.get('/',checkAuthenticated,async (req,res)=>{
+    if(req.session.korpa){
+        console.log('ima korpa')
+    }else{
+        req.session.korpa=[]
+    }
     const prodavnica = await Prodavnice.find({})
     req.params.user=await req.user
     let user = await req.user
@@ -14,7 +19,7 @@ router.get('/',checkAuthenticated,async (req,res)=>{
 module.exports = router
 
 function checkAuthenticated(req,res,next){
-    if(req.isAuthenticated()){
+    if(req.isAuthenticated()){  
         return next()
     }
     res.redirect('/login')

@@ -1,0 +1,65 @@
+.podesavanja img{
+    display: none;
+}
+body{
+    z-index: 3 !important;
+    width: 100%;
+    margin-bottom: 2vh;
+    background-color: var(--background-color);
+
+}
+.container{
+    width: 100%;
+    background-color: var(--background-color);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;   
+    align-items: center;
+    padding: 8px 5px;
+    border-bottom: 1px var(--border-color) solid;
+    font-size: var(--font-size-mid);
+    letter-spacing: -1px;
+    text-align: center;
+}
+.container img{
+    width: 65%;
+    filter: var(--filteri);
+}
+.container .div{
+    color: var(--background-color);
+    width: 10%;
+}
+.ime{
+    width: 20%;
+}
+.jelo{
+    width:20%
+}
+.kolicina{
+    width:10%
+}
+.cena{
+    width:20%
+}
+.centar{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+
+}
+button{
+    background: transparent;
+    border: none;
+    box-shadow: none;
+}
+.bottom{
+    justify-content: space-around;
+    position: fixed;
+    bottom: 0;
+    height: 15vh;
+    margin-bottom: -1vh;
+}
+.korpainer{
+    margin-bottom: 15vh;
+}

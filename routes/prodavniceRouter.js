@@ -3,16 +3,21 @@ const express=require('express')
 const router = express.Router({mergeParams:true})
 const Prodavnice=require('../models/Prodavnice')
 const User = require('../models/user')
-
+const nodemailer = require('nodemailer')
 makeProdavnica()
 getRoutes()
 // deleteProdavnicas()
 
 
+const transporter = nodemailer.createTransport({
+    service:'gmail',
+    auth:{
+        user:'aleksasmailsender@gmail.com',
+        pass:'ynqrwffqziiimzms'
+    }
+})
 
 
-
-module.exports = router
 
 
 
@@ -86,22 +91,22 @@ async function makeProdavnica(){
             imeProdavnice:'Kafeterija',
             meni:[
                 {segment:'Kafa',jela:[
-                    {jelo:'Espresso',cena:225,specijal:[{ime:'Selection',vrednost:0.95},{ime:'Blend',vrednost:.9},{ime:'Grand',vrednost:1}]},
-                    {jelo:'Dupli Espresso',cena:305,specijal:[{ime:'Selection',vrednost:0.95},{ime:'Blend',vrednost:.9},{ime:'Grand',vrednost:1}]},
-                    {jelo:'Produzeni Eprresso',cena:225,specijal:[{ime:'Selection',vrednost:0.95},{ime:'Blend',vrednost:.9},{ime:'Grand',vrednost:1}]},
-                    {jelo:'Makijato',cena:245,specijal:[{ime:'Selection',vrednost:0.95},{ime:'Blend',vrednost:.9},{ime:'Grand',vrednost:1}]},
-                    {jelo:'Kapucino',cena:275,specijal:[{ime:'Selection',vrednost:0.95},{ime:'Blend',vrednost:.9},{ime:'Grand',vrednost:1}]},
-                    {jelo:'Kapucino XL',cena:345,specijal:[{ime:'Selection',vrednost:0.95},{ime:'Blend',vrednost:.9},{ime:'Grand',vrednost:1}]},
-                    {jelo:'Amerikano',cena:345,specijal:[{ime:'Selection',vrednost:0.95},{ime:'Blend',vrednost:.9},{ime:'Grand',vrednost:1}]},
-                    {jelo:'Kafa late',cena:285,specijal:[{ime:'Selection',vrednost:0.95},{ime:'Blend',vrednost:.9},{ime:'Grand',vrednost:1}]},
-                    {jelo:'Late makijato',cena:305,specijal:[{ime:'Selection',vrednost:0.95},{ime:'Blend',vrednost:.9},{ime:'Grand',vrednost:1}]},
-                    {jelo:'Moka',cena:345,specijal:[{ime:'Selection',vrednost:0.95},{ime:'Blend',vrednost:.9},{ime:'Grand',vrednost:1}]},
-                    {jelo:'Moka XL',cena:395,specijal:[{ime:'Selection',vrednost:0.95},{ime:'Blend',vrednost:.9},{ime:'Grand',vrednost:1}]},
+                    {jelo:'Espresso',cena:225,specijal:[{ime:'Grand',vrednost:1},{ime:'Selection',vrednost:0.95},{ime:'Blend',vrednost:.9}]},
+                    {jelo:'Dupli Espresso',cena:305,specijal:[{ime:'Grand',vrednost:1},{ime:'Selection',vrednost:0.95},{ime:'Blend',vrednost:.9}]},
+                    {jelo:'Produzeni Espresso',cena:225,specijal:[{ime:'Grand',vrednost:1},{ime:'Selection',vrednost:0.95},{ime:'Blend',vrednost:.9}]},
+                    {jelo:'Makijato',cena:245,specijal:[{ime:'Grand',vrednost:1},{ime:'Selection',vrednost:0.95},{ime:'Blend',vrednost:.9}]},
+                    {jelo:'Kapucino',cena:275,specijal: [{ime:'Grand',vrednost:1},{ime:'Selection',vrednost:0.95},{ime:'Blend',vrednost:.9}]},
+                    {jelo:'Kapucino XL',cena:345,specijal: [{ime:'Grand',vrednost:1},{ime:'Selection',vrednost:0.95},{ime:'Blend',vrednost:.9}]},
+                    {jelo:'Amerikano',cena:345,specijal: [{ime:'Grand',vrednost:1},{ime:'Selection',vrednost:0.95},{ime:'Blend',vrednost:.9}]},
+                    {jelo:'Kafa late',cena:285,specijal: [{ime:'Grand',vrednost:1},{ime:'Selection',vrednost:0.95},{ime:'Blend',vrednost:.9}]},
+                    {jelo:'Late makijato',cena:305,specijal: [{ime:'Grand',vrednost:1},{ime:'Selection',vrednost:0.95},{ime:'Blend',vrednost:.9}]},
+                    {jelo:'Moka',cena:345,specijal: [{ime:'Grand',vrednost:1},{ime:'Selection',vrednost:0.95},{ime:'Blend',vrednost:.9}]},
+                    {jelo:'Moka XL',cena:395,specijal: [{ime:'Grand',vrednost:1},{ime:'Selection',vrednost:0.95},{ime:'Blend',vrednost:.9}]},
                 ]},
                 {segment:'Hladna Kafa',jela:[
-                    {jelo:'Hladni espresso',cena:315,specijal:[{ime:'Selection',vrednost:0.95},{ime:'Blend',vrednost:.9},{ime:'Grand',vrednost:1}]},
-                    {jelo:'Ledena kafa',cena:335,specijal:[{ime:'Selection',vrednost:0.95},{ime:'Blend',vrednost:.9},{ime:'Grand',vrednost:1}]},
-                    {jelo:'Ledena moka',cena:355,specijal:[{ime:'Selection',vrednost:0.95},{ime:'Blend',vrednost:.9},{ime:'Grand',vrednost:1}]},
+                    {jelo:'Hladni espresso',cena:315,specijal: [{ime:'Grand',vrednost:1},{ime:'Selection',vrednost:0.95},{ime:'Blend',vrednost:.9}]},
+                    {jelo:'Ledena kafa',cena:335,specijal: [{ime:'Grand',vrednost:1},{ime:'Selection',vrednost:0.95},{ime:'Blend',vrednost:.9}]},
+                    {jelo:'Ledena moka',cena:355,specijal: [{ime:'Grand',vrednost:1},{ime:'Selection',vrednost:0.95},{ime:'Blend',vrednost:.9}]},
 
                 ]},
                 {segment:'Topla Cokolada',jela:[
@@ -133,7 +138,7 @@ async function makeProdavnica(){
                     {jelo:'Jagoda',cena:285},
                     {jelo:'Malina',cena:285},
                 ]},
-                {segment:'dorucak',jela:[
+                {segment:'Dorucak',jela:[
                     {jelo:'Kroasan',cena:155},
                     {jelo:'Kroasan sunka i sir',cena:255},
                     {jelo:'Kroasan malina',cena:225},
@@ -170,15 +175,85 @@ async function getRoutes(){
                 const userID = await req.session.passport.user
                 const user = await User.findById(userID)
                 console.log(user,'URAAAA!')
+                console.log('KORPAGET',req.session.korpa,'KORPAGET')
+
                 res.render('meniPage',{prodavnica:prodavnica,user:user})
             }else{
                 res.redirect('/login')
             }
            
         })
+
+
+        router.post(`/${prodavnica.id}/`,async (req,res)=>{
+            if(req.session.korpa){
+                await req.session.korpa.push({ime:prodavnica.imeProdavnice,jelo:req.body.jelo,kolicina:req.body.kolicina,specijal:req.body.specijal,cena:req.body.cena})
+            }else{
+                req.session.korpa = []
+               await req.session.korpa.push({ime:prodavnica.imeProdavnice,jelo:req.body.jelo,kolicina:req.body.kolicina,specijal:req.body.specijal,cena:req.body.cena})
+            }
+            
+            
+            const userID = await req.session.passport.user
+                const user = await User.findById(userID)
+                console.log("KORPA",req.session.korpa,'KOPRA')
+            res.render('meniPage',{prodavnica:prodavnica,user:user,})
+
+        })
+
+
     })
+
+
 }
 async function deleteProdavnicas(){
     await Prodavnice.deleteMany({})
 }
 
+router.post('/posaljiEmail',async(req,res)=>{
+    const prodavnica = await Prodavnice.find({})
+    const korpa = req.session.korpa
+    if(korpa.length==0){
+    return res.render('homePage',{user:user,prodavnica:prodavnica,poruka:'Poruci hranu!!!'})
+    }
+    let cena= 50
+    korpa.forEach(korpa=>{
+        if(korpa.specijal){
+        cena+=Number(korpa.cena)*Number(korpa.specijal)*Number(korpa.kolicina)
+        }else{
+        cena+=Number(korpa.cena)    *Number(korpa.kolicina)
+        }
+    })
+    cena+=cena/10
+    cena=Math.ceil(cena)
+    const userID = await req.session.passport.user
+    const user = await User.findById(userID)
+    
+
+    req.session.korpa = []
+    const mailOptions = {
+        from:'aleksasmailsender@gmail.com',
+        to:'atesic7@gmail.com',
+        subject:`Hrana:${user.imePrezime}`,
+        text:`User:${user.imePrezime};
+        Broj Tel:${user.brojTelefona};
+
+        Jela:${JSON.stringify(korpa).replace('}','        ').replace('{','        ')}
+
+        Cena:${cena}
+        `
+
+    }
+    transporter.sendMail(mailOptions,(err,info)=>{
+        if (err) {
+            console.log(err)
+        }else{
+            console.log(info)
+        }
+    });
+    res.render('homePage',{user:user,prodavnica:prodavnica,poruka:'Uspesno ste porucili vasu hranu :)'})
+})
+
+
+
+module.exports = router

@@ -42,3 +42,18 @@ nijebody.addEventListener('click',()=>{
 
 
 
+const iframe = document.querySelector('.iframe')
+const korpa = document.querySelector('.korpa img')
+const potvrdi =document.querySelector('.potvrdi')
+korpa.addEventListener('click',()=>{
+    iframe.style.display='block'
+    nijebody.style.display='block'
+    potvrdi.style.display='block'
+
+})
+nijebody.addEventListener('click',()=>{
+    nijebody.style.display='none'
+    iframe.style.display='none'
+    potvrdi.style.display='none'
+
+})

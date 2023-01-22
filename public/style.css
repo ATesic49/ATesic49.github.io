@@ -6,12 +6,55 @@
     padding: 0;
     box-sizing: border-box;
 }
+.potvrdi{
+    position: fixed ;
+    bottom: 10%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    z-index: 5;
+    display: none;
+}
+.potvrdi form{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+.potvrdi button{
+    width: 80%;
+    background-color: var(--submit-color);
+    border-radius: 25px;
+    height: 6vh;
+    border: none;
+    box-shadow: 0px 0px 25px var(--skoro-background-color);
+}
 
+
+.iframe{
+    display:none;
+    z-index: 5;
+    background-color: var(--background-color);
+    border-radius: 25px;
+    position: fixed !important;
+    display: none;
+    z-index: 4;
+     position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%); 
+    box-shadow:0px 0px 20px var(--skoro-background-color) ;
+}
+iframe{
+    height: 60vh;
+    border-radius: 25px;
+    border: none
+
+}
 body{
     
 --font-size-small:10px;
 --font-size-mid:15px;
---font-size-large:25px;
+--font-size-large:23px;
 --font-size-x-large:35px;
 
 --background-color:rgb(49, 49, 49);
@@ -40,6 +83,9 @@ color:var(--font-color);
     top: 5%;
     left:8.05%;
     width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 .podesavanja img{
     position: absolute;
@@ -84,6 +130,7 @@ filter:var(--filteri);
     top:0;
     right:0;
     width: 100%;
+    position: fixed;
 }
 
 button{
@@ -157,6 +204,71 @@ input:focus{
     transform: translatex(20%);
 
 }
+
+
+
+
+/* KORPA     */
+
+.korpa{
+    position: absolute;
+    top: 16%;
+    right:3.05%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    }
+    .korpa img{
+        width: 50%;
+        transform: rotateY(180deg);
+    }
+/* KORPA     */
+/* USER */
+
+.logout{
+    position: absolute;
+    top: 3%;
+    right: 5%;
+}
+.logout button{
+    background-color:  var(--submit-color);
+    color: var(--font-color);
+    outline: none;
+    border: 1px solid var(--border-color);
+    padding: 8px 10px;
+    border-radius: 25px;
+    font-family: 'Righteous';
+
+
+}
+.user{
+    position: absolute;
+    top: 10%;
+    right: 5%;
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+    font-weight: 400;
+
+}
+.user:hover{
+    transform: scale(1.05);
+    transition: .2s;
+}
+.user img{
+    display: inline;
+    width: 15%;
+    filter: var(--filteri);
+}
+
+
+
+/* USER */
+
+
+
+
+
 @keyframes meni {
     0%{
         width: 0;

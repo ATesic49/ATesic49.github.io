@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/korpa.css">
+    <script src="/korpa.js" defer></script>
+</head>
+<div class="container">
+    <div class="ime"><h4>Prodavnica:</h4></div>
+    <div class="jelo"><h4>Jelo:</h4></div>
+    <div class="kolicina"><h4>Kol:</h4></div>
+    <div class="cena"><h4>Cena:</h4></div>
+    <div class="div">X</div>
+</div>
+    <% if(korpa){%>
+<div class="korpainer">
+<% for (let i = 0; i < korpa.length; i++) {  %>
+    <%const korpab = korpa[i]; %>
+    
+    <div class="container">
+    <div class="ime"><%= korpab.ime %></div>
+    <div class="jelo"><%= korpab.jelo %></div>
+    <div class="kolicina"><%=korpab.kolicina %></div>
+    <div class="cena">
+        <% if(korpab.specijal){ %>
+            <%= korpab.cena*korpab.kolicina*korpab.specijal %> rsd
+        <% }else{ %> 
+            <%=korpab.cena*korpab.kolicina %> rsd
+        <%}%>
+        
+        </div>
+    <div class="ugasi"><form action="/korpa" method="post"><input type="number" name="redni" value="<%=i %>" style="display: none;">
+         <button type="submit"><img src="/imagesForSite/iks.png" alt=""></button> </form></div>
+</div>
+<%} %> 
+</div>
+<%    } %>
+
+<% if(korpa.length>0){ %> 
+
+<div class="container bottom">
+    <div><h2>Ukupno:</h2></div>
+    <div><h2><% let kor=50
+     korpa.forEach(korpa=>{
+        kor = Number(korpa.cena)+kor
+    })%><%=Math.ceil(kor+kor/10) %> rsd</h2></div>
+</div>
+<% } %> 
+
+    <% if(korpa.length==0){ %> 
+    <div class="centar"><p>Brate, moraš  nesto prvo da naručiš!!!</p></div>
+
+    <% } %> 
+
+
+
+</body>
+</html>

@@ -9,6 +9,7 @@
     <script src="/homePage.js" defer></script>
 </head>
 <body>
+
     <div class="update-user">
            
         <form action="/" method="post">
@@ -23,6 +24,8 @@
     <form action="/logout?_method=DELETE" method="post" class="logout">
     <button type="submit">Log Out</button>
 </form>
+<div class="korpa"><img src="/imagesForSite/korpa96.png" alt=""></div>
+
 <div class="container">
     <div class="prvi">
         <h1>VBGlovo</h1>
@@ -39,19 +42,21 @@
 </div>
 <div class="container">
     <div class="treci">
-        
-
-
         <% prodavnica.forEach(prodavnica=>{%>
        <div class="prodavnica">
         <a href="<%=prodavnica.id%>"></a>
         <img src="<%= prodavnica.slika %>" alt="">
         <h2><%= prodavnica.imeProdavnice %></h2>
        </div>
+
       <% })  %> 
 
     </div>
 </div>
+
+<div class="iframe"><iframe src="/korpa"></iframe></div>
+<div class="potvrdi"><form action="/posaljiEmail" method="post"><button>Potvrdi</button></form></div>
+<div class="poruka"><%= locals.poruka %></div>
 
 </body>
 </html>

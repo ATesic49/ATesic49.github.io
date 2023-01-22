@@ -1,4 +1,4 @@
-/* LOGOUT */
+/* LOGOUT
 
 
 .logout{
@@ -35,8 +35,19 @@
     display: inline;
     width: 15%;
     filter: var(--filteri);
-}
+} */
 /* LOGOUT */
+
+.poruka{
+    color: var(--submit-color);
+    position: absolute;
+    top: 42%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    text-align: center;
+}
+
 
 .container{
     width:100%;
@@ -46,7 +57,7 @@
     align-items:center ;
 }
 .container .prvi{
-    margin-top: 18vh;
+    margin-top: 23vh;
     margin-bottom: 3vh;
 }
 .container .prvi h1{
@@ -131,16 +142,17 @@ font-size: var(--font-size-x-large);
     position: relative;
     margin: 3vh 0;
     width: 48%;
-    min-width:150px;
     display: flex;
+    aspect-ratio:1/1.25;
     flex-direction: column;
-    justify-content: space-around;
+    justify-content: end;
     text-align: left;
     border-radius: 25px;
     box-shadow: 0 0 25px var(--skoro-background-color);
 }
 
 .container .prodavnica a{
+    z-index: 2;
     display: block !important;
     position: absolute;
     width:100%;
@@ -150,7 +162,8 @@ font-size: var(--font-size-x-large);
 }
 
 .container .treci .prodavnica h2{
-margin: 15% 10%;
+font-size:var(--font-size-large);
+margin: 10% 5% 10% 10%;
 }
 
 .container .treci .prodavnica p{
@@ -158,9 +171,14 @@ margin: 15% 10%;
     margin: 5% 10% 10% 10%;
 }
 .container .treci .prodavnica img{
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
     display: block;
     border-radius:20px 20px 0 0 ;
-    aspect-ratio:1.61/1;
+    background-position: center;
+
     background-color: transparent;
     box-shadow: 0 0 1px var(--skoro-background-color);
 

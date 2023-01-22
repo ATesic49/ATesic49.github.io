@@ -59,11 +59,13 @@ const loginRouter = require('./routes/loginRouter')
 const homeRouter =require('./routes/homeRouter')
 const logoutRouter = require('./routes/logoutPage')
 const prodavniceRouter = require('./routes/prodavniceRouter')
+const korpa = require('./routes/korpa')
     app.use('/register', registerRouter)
     app.use('/login', loginRouter)
     app.use('/',homeRouter)
     app.use('/logout',logoutRouter)
     app.use('/',prodavniceRouter)
+    app.use('/korpa',korpa)
 
 
     app.listen(process.env.PORT || 3000)

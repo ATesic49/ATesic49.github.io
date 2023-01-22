@@ -1,9 +1,10 @@
 /* LOGOUT */
 
 
+
 .logout{
     position: absolute;
-    top: 5%;
+    top: 3%;
     right: 5%;
 }
 .logout button{
@@ -19,7 +20,7 @@
 }
 .user{
     position: absolute;
-    top: 12%;
+    top: 10%;
     right: 5%;
     display: flex;
     align-items: flex-end;
@@ -36,6 +37,9 @@
     width: 15%;
     filter: var(--filteri);
 }
+
+
+
 /* LOGOUT */
 
 .container{
@@ -46,7 +50,7 @@
     align-items:center ;
 }
 .container .prvi{
-    margin-top: 18vh;
+    margin-top: 23vh;
     margin-bottom: 3vh;
 }
 .container .prvi h1{
@@ -100,7 +104,7 @@ font-size: var(--font-size-x-large);
     height: 100%;
     background-repeat: no-repeat;
     border-radius: 0px 25px 25px 0;
-    z-index: 2 !important;
+    z-index: 2 ;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -112,46 +116,132 @@ font-size: var(--font-size-x-large);
 
 /* DRUGI*/
 /* TRECI */
+#prodavnice{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.container .tri{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+
+}
 /* .naziv{
     width: 100%;
     text-align:center;
 } */
-.container .treci{
-    min-height: 8vh;
+.container .segment{
     width: 100%;
     display: flex;
-    flex-direction: row;
-    padding: 5px 8px;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
     align-items: center;
-    justify-content:space-around;
-    border-top: .5px var(--border-color) solid;
-    border-bottom: .5px var(--border-color) solid;
+}
+.container .segment .box-holder{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 95%;
+    justify-content: space-around;
+}
+.container .segment .box{
+    margin: 3vh 0;
+    display: flex;
+    width: 48%;
+    height: 25vh;
+    flex-direction: column;
+    justify-content: space-around;
+    border-radius: 25px;
+    box-shadow: 0 0 25px var(--skoro-background-color);
+
 
 }
 
 
-.container .treci div {
-    width: 30%;
+.naruci button{
+width: 75%;
+background-color: var(--submit-color);
+border-radius: 25px;
+height: 5vh;
+border: none;
+box-shadow: 0 0 15px var(--skoro-background-color);
+}
+.segment{
     text-align: center;
 }
 
-.container .treci .jelo{
-    text-align: left;
-}
-.container .treci .cena{
-    text-align: right;
-    width: 20%;
-
+.foreachBox{
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-.container .treci  input{
-    width:10%;
-    border:1px solid var(--border-color);
+.prekobox{
+    box-shadow: 0 0 15px var(--skoro-background-color);
+    background-color: var(--background-color);
+    border-radius: 25px;
+    position: absolute;
+    top: 50%;
+    right: 50%;
+    transform: translate(50%,-50%);
+    width: 80%;
+    height: 45vh;
+    position: fixed !important;
+    display: none;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    z-index: 4;
+    
+}
+.nijebody{
+    background-color: var(--font-color);
+    opacity: 0.25;
+}
+.prekobox div{
+    color: var(--font-color);
+    width: 100%;
+}
+.prekobox input{
+    text-align: center;
+    width: 40%;
     outline: none;
+    border: 1px var(--border-color) solid;
+    background-color: transparent;
+    padding: 4px 2.5px;
+    border-radius: 5px;
+    background-color: transparent;
+    font-family: 'M PLUS Rounded 1c';
+    color: var(--font-color);
 
 }
-.container .treci .specijal{
+.prekobox select{
     outline: none;
-
+    padding: 8px 5px;
+    border-radius: 5px;
+    background-color: transparent;
+    font-family: 'M PLUS Rounded 1c';
+    color: var(--font-color);
 }
+.prekobox .specijal{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 90%;
+}
+.prekobox .kol{
+    display: flex;
+    flex-direction: column;
+    width: 30%;
+    justify-content: center;
+    align-items: center;
+}
+
 /* TRECI */
