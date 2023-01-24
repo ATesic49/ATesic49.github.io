@@ -216,7 +216,7 @@ router.post('/posaljiEmail',async(req,res)=>{
     if(korpa.length==0){
     return res.render('homePage',{user:user,prodavnica:prodavnica,poruka:'Poruci hranu!!!'})
     }
-    let cena= 50
+    let cena= 20
     korpa.forEach(korpa=>{
         if(korpa.specijal){
         cena+=Number(korpa.cena)*Number(korpa.specijal)*Number(korpa.kolicina)
